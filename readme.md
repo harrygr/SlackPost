@@ -19,7 +19,7 @@ SlackPost allows you to post to Slack from your command line. This is especially
 
 ## Usage
 
-From the command line you should now be able to post to Slack to whichever room you configured when setting up the incoming webhook:
+From the command line you should now be able to post to Slack to whichever room you configured when setting up the incoming webhook with the command `ruby send.rb [MESSAGE] [LEVEL|EMOJI]`. E.g.
 
     $ ruby ~/SlackPost/send.rb "Hello World!" "info"
 
