@@ -3,7 +3,7 @@
 require_relative 'slack_post'
 
 require 'dotenv'
-Dotenv.load
+Dotenv.load File.absolute_path(File.join(File.expand_path(__FILE__), '..', '.env'))
 
 message = ARGV[0]
 level = ARGV[1]
