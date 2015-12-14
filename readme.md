@@ -31,10 +31,7 @@ You can also pass in an icon tag for which to precede the message with:
 
 You can now use this to how other scripts around your system send Slack messages. E.g. in a fail2ban config you might have something like this:
 
-    actionban = iptables -I fail2ban-REPEAT-<name> 1 -s <ip> -j DROP
-                # also put into the static file to re-populate after a restart
-                ! grep -Fq <ip> /etc/fail2ban/ip.blocklist.<name> && echo "<ip> # fail2ban/$( date ‘+%%Y-%%m-%%d %%T’ ): auto-add for repeat offender" >> /etc/fail2ban/ip.blocklist.<name>
-                ruby /home/ubuntu/SlackPost/send.rb "Banned IP <ip> for repeat offences" "WARNING"
+    actionban = /home/ubuntu/SlackPost/send.rb "Banned IP <ip> for repeat offences" "WARNING"
 
 which notifies whenever an ip is banned for repeat attacks.
 
